@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+ @import "bootstrap";
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-brand {
+  color: #EDEDED !important;
+  &:hover {
+    color: #FFFFFF !important;
+  }
+}
