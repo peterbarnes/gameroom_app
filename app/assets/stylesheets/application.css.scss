@@ -16,10 +16,17 @@
 * {
   font-family: 'Open Sans', sans-serif;
 }
-
 .navbar-brand {
   color: #EDEDED !important;
   &:hover {
     color: #FFFFFF !important;
+  }
+}
+.inside {
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  ul {
+    list-style: none;
   }
 }
