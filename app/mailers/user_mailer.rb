@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "barnespeter213@gmail.com"
+  default from: "no-reply@gameroomforpresident.com"
 
   def email(params)
     @params = params
