@@ -11,7 +11,15 @@
  *= require_self
  *= require_tree .
  */
- @import "bootstrap";
+@import "bootstrap";
+
+/* variables */
+
+$grpurple: #9600A3;
+$grhover: #7A0085;
+$grlink: #CB38D9;
+
+/* universal */
 
 * {
   font-family: 'Open Sans', sans-serif;
@@ -20,6 +28,14 @@
   color: #EDEDED !important;
   &:hover {
     color: #FFFFFF !important;
+  }
+}
+
+a {
+  color: $grlink;
+  &:hover {
+    color: $grpurple;
+    text-decoration: none;
   }
 }
 .inside {
@@ -56,3 +72,17 @@ footer {
     font-size: 75%;
   }
 }
+
+.btn-primary {
+  background-color: $grpurple;
+  border-color: $grpurple;
+  &:hover {
+    background-color: $grhover;
+    border-color: $grhover;
+  }
+}
+
+.btn-primary[disabled] {
+    background-color: #DB9DE0 !important;
+    border-color: #DB9DE0 !important;
+  }
