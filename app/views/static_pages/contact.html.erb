@@ -1,2 +1,49 @@
-<h1>StaticPages#contact</h1>
-<p>Find me in app/views/static_pages/contact.html.erb</p>
+<div class="row">
+  <div class="soclinks">
+    <div class="col-md-6 well">
+      <h3><i class="fa fa-users"></i> Follow us</h3>
+      <a href="https://facebook.com/gameroomforpresident" 
+         class="btn btn-primary btn-block btn-lg" 
+         target="blank">
+         <i class="fa fa-facebook-square"></i> 
+         Facebook
+      </a>
+      <a href="#" 
+         class="btn btn-primary btn-block btn-lg" 
+         disabled="disabled">
+         <i class="fa fa-twitter-square"></i> 
+         Twitter (Coming soon)
+      </a>
+      <a href="#" 
+         class="btn btn-primary btn-block btn-lg" 
+         disabled="disabled">
+         <i class="fa fa-tumblr-square"></i> 
+         Tumblr (Coming soon)
+      </a>
+    </div>
+  </div>
+  <div class="emailform">
+    <div class="col-md-5 col-md-offset-1 well">
+      <h3><i class="fa fa-comments"></i> Questions, comments, or concerns?</h3>
+      <%= form_tag("/send", method: "post") do %>
+        <div class="form-group">
+          <%= label_tag(:name, "Name") %>
+          <%= text_field_tag(:name, params[:name], class: "form-control") %>
+        </div>
+        <div class="form-group">
+          <%= label_tag(:email, "Email") %>
+          <%= text_field_tag(:email, params[:email], class: "form-control") %>
+        </div>
+        <div class="form-group">
+          <%= label_tag(:body, "Message") %>
+          <%= text_area_tag(:body, params[:body], class: "form-control") %>
+        </div>
+        <button type="submit" 
+                class="btn btn-primary">
+             <i class="fa fa-envelope-o"></i> 
+            Send
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>

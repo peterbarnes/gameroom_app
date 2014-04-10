@@ -4,6 +4,7 @@ GameroomApp::Application.routes.draw do
   match '/about',     to: 'static_pages#about',     via: 'get'
   match '/locations', to: 'static_pages#locations', via: 'get'
   match '/services',  to: 'static_pages#services',  via: 'get'
+  post 'send' =>          'static_pages#sendit'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

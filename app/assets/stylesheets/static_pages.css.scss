@@ -8,8 +8,9 @@
   }
 }
 
-@media all and (max-width: 1440px) {
-  iframe {
+@media all and (max-width: 750px) {
+  .info iframe {
     display: none;
   }
 }
+
