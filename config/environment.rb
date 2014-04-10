@@ -5,8 +5,8 @@ require File.expand_path('../application', __FILE__)
 GameroomApp::Application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => ENV["SG_USERNAME"],
-  :password => ENV["SG_PASSWORD"],
+  :user_name => ENV["SENDGRID_USERNAME"],
+  :password => ENV["SENDGRID_PASSWORD"],
   :domain => 'gameroom.herokuapp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
