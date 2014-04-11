@@ -18,6 +18,7 @@
 $grpurple: #9600A3;
 $grhover: #7A0085;
 $grlink: #CB38D9;
+$grdisabled: #DB9DE0;
 
 /* universal */
 
@@ -29,6 +30,12 @@ $grlink: #CB38D9;
   &:hover {
     color: #FFFFFF !important;
   }
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 a {
@@ -83,6 +90,8 @@ footer {
 }
 
 .btn-primary[disabled] {
-    background-color: #DB9DE0 !important;
-    border-color: #DB9DE0 !important;
-  }
+  background-color: $grdisabled !important;
+  border-color: $grdisabled !important;
+}
+
+
