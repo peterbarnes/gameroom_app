@@ -75,6 +75,20 @@ a {
     text-decoration: none;
   }
 }
+div.pagination {
+  margin: 0px;
+  margin-top: -17px;
+  .active a{
+    background-color: $grpurple !important;
+    border-color: $grpurple !important;
+    &:hover {
+      color: $grpurple !important;
+    }
+  }
+  a {
+    color: $grlink;
+  }
+}
 .inside {
   width: 80%;
   margin-right: auto;
