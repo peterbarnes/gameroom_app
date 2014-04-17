@@ -13,6 +13,12 @@
  */
 @import "bootstrap";
 
+@media all and (max-width: 750px) {
+  .info iframe {
+    display: none;
+  }
+}
+
 /* variables */
 
 $grpurple: #9600A3;
