@@ -13,9 +13,33 @@
  */
 @import "bootstrap";
 
+.inside * {
+  max-width: 1182px !important;
+}
+
 @media all and (max-width: 750px) {
   .info iframe {
     display: none;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .soclinks div {
+    margin-right: 0px !important;
+  }
+}
+
+@media all and (max-width: 1420px) {
+  .row {
+    .about {
+      margin-right: 0px !important;
+      width: 100% !important;
+    }
+    .col-md-4.well {
+      margin-right: 0px !important;
+      margin-left: 0px !important;
+      width: 100% !important;
+    }
   }
 }
 
