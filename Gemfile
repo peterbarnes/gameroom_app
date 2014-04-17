@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '3.1.2'
+gem 'faker'
+gem 'will_paginate'
 
 group :development do
   gem 'sqlite3'
