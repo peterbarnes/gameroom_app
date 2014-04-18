@@ -1,0 +1,9 @@
+<li style="margin-bottom: 5px;">
+  <%= gravatar_for user, size: 65 %>
+  <%= link_to user.name, user, style: "font-size: 18px; color: #333333;" %>
+  <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to user, method: :delete, data: { confirm: "You sure?" }  do %>
+      <i class="fa fa-times" style="color: red;"></i>
+      <% end %>
+  <% end %>
+</li>
