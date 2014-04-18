@@ -1,12 +1,19 @@
 <% provide(:title, "All users") %>
 <div class="row">
   <div class="col-md-12 well well-sm">
-    <h2><i class="fa fa-users"></i> All users</h2>
+    <h2 style="text-align: center;"><i class="fa fa-users"></i> All users</h2>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12 page">
+  <div class="col-md-6 page">
     <%= will_paginate %>
+  </div>
+  <div class="col-md-6">
+    <%= form_tag(users_path, :method => 'get', class:"pull-right", id: "search-form") do %>
+    <div class="form-group pull-right" style="margin-bottom: 28px;">
+      <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control pull-left" %>
+    </div>
+    <% end %>
   </div>
 </div>
 <div class="row">
@@ -19,6 +26,10 @@
         </li>
       <% end %>
     </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 page">
     <%= will_paginate %>
   </div>
 </div>

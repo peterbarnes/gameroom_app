@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.order('name ASC').paginate(page: params[:page])
+    if params[:search]
+      @users = User.search(params[:search]).order('name ASC').paginate(page: params[:page])
+    else
+      @users = User.order('name ASC').paginate(page: params[:page])
+    end
   end
 
   def create
