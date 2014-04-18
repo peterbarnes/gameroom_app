@@ -17,6 +17,13 @@
   max-width: 1182px !important;
 }
 
+/* iphone screen */
+@media all and (max-width: 640px) {
+  .nav-links {
+    display: none;
+  }
+}
+
 @media all and (max-width: 750px) {
   .info iframe {
     display: none;
