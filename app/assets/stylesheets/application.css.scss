@@ -13,10 +13,6 @@
  */
 @import "bootstrap";
 
-.inside * {
-  max-width: 1182px !important;
-}
-
 /* iphone screen */
 @media all and (max-width: 640px) {
   .nav-links {
@@ -27,26 +23,6 @@
 @media all and (max-width: 750px) {
   .info iframe {
     display: none;
-  }
-}
-
-@media all and (max-width: 991px) {
-  .soclinks div {
-    margin-right: 0px !important;
-  }
-}
-
-@media all and (max-width: 1439px) {
-  .row {
-    .about {
-      margin-right: 0px !important;
-      width: 100% !important;
-    }
-    .col-md-4.well {
-      margin-right: 0px !important;
-      margin-left: 0px !important;
-      width: 100% !important;
-    }
   }
 }
 
@@ -69,12 +45,6 @@ $grdisabled: #DB9DE0;
   }
 }
 
-.center-block {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 a {
   color: $grlink;
   &:hover {
@@ -94,14 +64,6 @@ div.pagination {
   }
   a {
     color: $grlink;
-  }
-}
-.inside {
-  width: 80%;
-  margin-right: auto;
-  margin-left: auto;
-  ul {
-    list-style: none;
   }
 }
 
