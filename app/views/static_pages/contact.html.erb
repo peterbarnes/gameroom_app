@@ -1,60 +1,80 @@
 <div class="row">
-  <div class="soclinks">
-    <div class="col-md-6 well">
-      <h3><i class="fa fa-users"></i> Follow us</h3>
-      <a href="https://facebook.com/gameroomforpresident" 
-         class="btn btn-primary btn-block btn-lg" 
-         target="blank">
-         <i class="fa fa-facebook-square"></i> 
-         Face book (sucks)
-      </a>
-      <a href="#" 
-         class="btn btn-primary btn-block btn-lg" 
-         disabled="disabled">
-         <i class="fa fa-twitter-square"></i> 
-         Twitter (Coming soon)
-      </a>
-      <a href="#" 
-         class="btn btn-primary btn-block btn-lg" 
-         disabled="disabled">
-         <i class="fa fa-tumblr-square"></i> 
-         Tumblr (Coming soon)
-      </a>
-      <a href="#" 
-         class="btn btn-primary btn-block btn-lg" 
-         disabled="disabled">
-        <i class="fa fa-linkedin-square"></i>
-        LinkedIn (Coming Soon)
-      </a>
-      <a href="#" class="btn btn-primary btn-block btn-lg" disabled="disabled">
-        <i class="fa fa-google-plus-square"></i>
-        Google Plus (Coming Soon)
-      </a>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3><i class="fa fa-users"></i> Follow us</h3>
+      </div>
+      <div class="panel-body">
+        <a href="https://facebook.com/gameroomforpresident" 
+           target="blank" 
+           class="btn btn-primary btn-block">
+           <i class="fa fa-facebook-square"></i> 
+           Facebook
+        </a>
+        <a href="#" 
+           target="blank" 
+           class="btn btn-primary btn-block"
+           disabled="disabled">
+           <i class="fa fa-twitter-square"></i> 
+           Twitter (Coming soon)
+        </a>
+        <a href="https://tumblr.com" 
+           target="blank" 
+           class="btn btn-primary btn-block"
+           disabled="disabled">
+           <i class="fa fa-tumblr-square"></i> 
+           Tumblr (Coming soon)
+        </a>
+        <a href="https://linkedin.com" 
+           target="blank" 
+           class="btn btn-primary btn-block"
+           disabled="disabled">
+           <i class="fa fa-linkedin-square"></i> 
+           LinkedIn (Coming soon)
+        </a>
+        <a href="https://plus.google.com" 
+           target="blank" 
+           class="btn btn-primary btn-block"
+           disabled="disabled">
+           <i class="fa fa-google-plus-square"></i> 
+           Google+ (Coming soon)
+        </a>
+      </div>
     </div>
   </div>
-  <div class="emailform">
-    <div class="col-md-6 well" style="width: 571px;">
-      <h3><i class="fa fa-comments"></i> Questions, comments, or concerns?</h3>
-      <%= form_tag("/send", method: "post") do %>
-        <div class="form-group">
-          <%= label_tag(:name, "Name") %>
-          <%= text_field_tag(:name, params[:name], class: "form-control") %>
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3><i class="fa fa-comments"></i> Questions, comments, or concerns?</h3>
+      </div>
+      <div class="panel-body">
+        <div class="emailform">
+          <%= form_tag("/send", method: "post") do %>
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <%= label_tag(:name, "Name") %>
+                <%= text_field_tag(:name, params[:name], class: "form-control") %>
+                <hr noshade>
+                <%= label_tag(:email, "Email") %>
+                <%= text_field_tag(:email, params[:email], class: "form-control") %>
+              </div>
+              <div class="col-md-6 form-group">
+                <%= label_tag(:body, "Message") %>
+                <%= text_area_tag(:body, params[:body], class: "form-control", rows: "6") %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1">
+                <button type="submit" 
+                        class="btn btn-primary">
+                     <i class="fa fa-envelope-o"></i> 
+                    Send
+                </button>
+              </div>
+            </div>
+          <% end %>
         </div>
-        <div class="form-group">
-          <%= label_tag(:email, "Email") %>
-          <%= text_field_tag(:email, params[:email], class: "form-control") %>
-        </div>
-        <div class="form-group">
-          <%= label_tag(:body, "Message") %>
-          <%= text_area_tag(:body, params[:body], class: "form-control", rows: "6") %>
-        </div>
-        <button type="submit" 
-                class="btn btn-primary">
-             <i class="fa fa-envelope-o"></i> 
-            Send
-        </button>
-        <a href="#" class="btn btn-default"><i class="fa fa-times"></i> Clear</a>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

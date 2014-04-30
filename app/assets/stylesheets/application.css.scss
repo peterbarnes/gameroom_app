@@ -13,16 +13,26 @@
  */
 @import "bootstrap";
 
+ul {
+  list-style: none;
+}
+
 /* iphone screen */
-@media all and (max-width: 640px) {
-  .nav-links {
+@media all and (max-width: 992px) {
+  .navlinks {
     display: none;
+  }
+  .about {
+    .panel-body {
+      max-height: 100% !important;
+      min-height: 100% !important;
+    }
   }
 }
 
 @media all and (max-width: 750px) {
-  .info iframe {
-    display: none;
+  iframe, hr {
+    display: none !important;
   }
 }
 
