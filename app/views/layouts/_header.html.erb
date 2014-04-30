@@ -45,6 +45,7 @@
       <!--Right navbar section-->
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? && current_user.admin? %>
+        <li><%= link_to "Admin", '#' %></li>
         <li><%= link_to "Users", users_path %></li>
         <% end %>
         <% if signed_in? %>

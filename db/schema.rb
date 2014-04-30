@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418190154) do
+ActiveRecord::Schema.define(version: 20140430222701) do
+
+  create_table "blurbs", force: true do |t|
+    t.string   "title"
+    t.string   "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
