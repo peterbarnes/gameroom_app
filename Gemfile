@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'faker'
+gem 'rest-client'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate', '0.0.10'
 

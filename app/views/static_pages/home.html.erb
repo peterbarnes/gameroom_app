@@ -6,49 +6,21 @@
   </div>
 </div>
 <div class="row">
+<% @blurbs.each do |b| %>
   <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4><i class="fa fa-money"></i> Deal of the week</h4>
+        <h4>
+          <i class="fa fa-<%= b.icon %>"></i>
+          <%= b.title %>
+        </h4>
       </div>
       <div class="panel-body">
         <p>
-          Quid securi etiam tamquam eu fugiat nulla pariatur. 
-          Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. 
-          Prima luce, cum quibus mons aliud  consensu ab eo. 
-          Gallia est omnis divisa in partes tres, quarum.
+          <%= b.desc %>
         </p>
       </div>
     </div>
   </div>
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4><i class="fa fa-eye"></i> Wanted Items List</h4>
-      </div>
-      <div class="panel-body">
-        <p>
-          Quid securi etiam tamquam eu fugiat nulla pariatur. 
-          Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. 
-          Prima luce, cum quibus mons aliud  consensu ab eo. 
-          Gallia est omnis divisa in partes tres, quarum.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4><i class="fa fa-calendar-o"></i> Gameroom headlines</h4>
-      </div>
-      <div class="panel-body">
-        <p>
-          Quid securi etiam tamquam eu fugiat nulla pariatur. 
-          Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. 
-          Prima luce, cum quibus mons aliud  consensu ab eo. 
-          Gallia est omnis divisa in partes tres, quarum.
-        </p>
-      </div>
-    </div>
-  </div>
+<% end %>
 </div>

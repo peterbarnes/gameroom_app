@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @blurbs = Blurb.all
   end
 
   def about
