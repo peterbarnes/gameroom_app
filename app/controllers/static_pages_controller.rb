@@ -7,12 +7,14 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+
   end
 
   def services
   end
 
   def locations
+    @stores = Store.all
   end
 
   def index

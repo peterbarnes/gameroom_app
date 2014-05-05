@@ -13,6 +13,14 @@
         <h4>
           <i class="fa fa-<%= b.icon %>"></i>
           <%= b.title %>
+          <% if signed_in? && current_user.admin? %>
+            <%= link_to edit_blurb_path(b) do %>
+              <i class="fa fa-pencil-square-o pull-right"></i>
+            <% end %>
+            <%= link_to b, method: :delete, data: { confirm: "You sure?" } do %>
+              <i class="fa fa-times-circle pull-right red"></i>
+            <% end %>
+          <% end %>
         </h4>
       </div>
       <div class="panel-body">

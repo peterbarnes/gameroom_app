@@ -1,5 +1,5 @@
 class BlurbsController < ApplicationController
-  before_action :admin_user, only: [:new, :create, :index]
+  before_action :admin_user
 
   def new
     @blurb = Blurb.new
@@ -12,6 +12,20 @@ class BlurbsController < ApplicationController
       redirect_to root_url
     else
       render 'new'
+    end
+  end
+
+  def edit
+    @blurb = Blurb.find(params[:id])
+  end
+
+  def update
+    @blurb = Blurb.find(params[:id])
+    if @blurb.update_attributes(blurb_params)
+      flash[:success] = "Blurb updated"
+      redirect_to root_url
+    else
+      render 'edit'
     end
   end
 
@@ -31,20 +45,19 @@ class BlurbsController < ApplicationController
       params.require(:blurb).permit!
     end
 
-    def signed_in_user
+    def admin_user
       unless signed_in?
         store_location
         flash[:warning] = 'Please sign in.'
         redirect_to signin_url
       end
-    end
-
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user) || current_user.admin?
-    end
-
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
+      if signed_in?
+        if current_user.admin?
+        else
+          redirect_to root_url
+          flash[:warning] = "You must be an administrator to access this page."
+        end
+      else
+      end
     end
 end

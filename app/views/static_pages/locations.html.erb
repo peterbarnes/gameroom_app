@@ -1,43 +1,31 @@
 <div class="row">
   <div class="col-md-2 panel panel-default navlinks">
-    <h5><a href="#downtown">Gameroom Downtown</a></h5>
-    <h5><a href="#south">Gameroom South</a></h5>
+    <% @stores.each do |l| %>
+      <h5><a href="#<%= l.title %>"><%= l.title %></a></h5>
+    <% end %>
     <hr noshade>
     <h5><a href="#">Back to top</a></h5>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-9 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 id="downtown" class="head"><i class="fa fa-building-o"></i> Gameroom Downtown|<small><i class="fa fa-mobile"></i> (402)-438-7161</small></h4>
+  <% @stores.each do |s| %>
+    <div class="col-md-9 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        <h4 id="<%= s.title %>" class="head"><i class="fa fa-building-o"></i> <%= s.title %>|<small><i class="fa fa-mobile"></i> <%= s.number %></small></h4>
       </div>
       <div class="panel-body">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3019.662031853592!2d-96.696294!3d40.81342!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8796befa9bdc23af%3A0x9e3f38d758bd8e91!2sThe+Gameroom!5e0!3m2!1sen!2sus!4v1396992242934" width="500" height="400" frameborder="0" style="border:0" class="center-block"></iframe>
-        <hr noshade>
+        <% if s.gmap != nil %>
+          <%= s.gmap %>
+          <hr>
+        <% end %>
         <div class="details">
-          <p class="head">1713 O St|Lincoln NE|68508</p>
-          <p class="head"><i class="fa fa-clock-o"></i> 11am - 9pm</p>
+          <p class="text-center"><%= s.address %></p>
+          <p class="text-center"><%= s.hours %></p>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-9 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 id="south" class="head"><i class="fa fa-building-o"></i> Gameroom South|<small><i class="fa fa-mobile"></i> (402)-421-0935</small></h4>
-      </div>
-      <div class="panel-body">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3022.1596143509505!
-          2d-96.640411!3d40.758514!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87969622d3fdf0c3%3A0xae4673310be16c0c!2sGameroom!5e0!3m2!1sen!2sus!4v1396992104768" width="500" height="400" frameborder="0" style="border:0" class="center-block"></iframe>
-        <hr noshade>
-        <div class="details">
-          <p class="head">5400 S 56th St|Lincoln NE|68516</p>
-          <p class="head"><i class="fa fa-clock-o"></i> 11:30am - 8:30pm</p>
-        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
+
