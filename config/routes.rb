@@ -11,6 +11,7 @@ GameroomApp::Application.routes.draw do
   match '/about',     to: 'static_pages#about',     via: 'get'
   match '/locations', to: 'static_pages#locations', via: 'get'
   match '/services',  to: 'static_pages#services',  via: 'get'
+  match '/admin',     to: 'static_pages#admin',     via: 'get'
   post 'send' =>          'static_pages#sendit'
 
  

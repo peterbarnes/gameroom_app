@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>
+          Home
+          <%= link_to new_blurb_path, class: "pull-right btn btn-primary" do %>
+            <i class="fa fa-plus"></i>
+             New Blurb
+          <% end %>
+        </h2>
+      </div>
+      <div class="panel-body">
+        <% @blurbs.each do |b| %>
+          <h4 class="well"><i class="fa fa-<%= b.icon %>"></i> <%= b.title %> | <%= b.desc %> <%= link_to edit_blurb_path(b) do %>
+                                                                                  <i class="fa fa-pencil-square-o pull-right"></i>
+                                                                                <% end %>
+                                                                                <%= link_to b, method: :delete, data: { confirm: "You sure?" } do %>
+                                                                                  <i class="fa fa-times-circle pull-right red"></i>
+                                                                                <% end %>
+          </h4>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
