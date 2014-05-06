@@ -1,3 +1,4 @@
+<% assets %>
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -22,8 +23,9 @@
              Locations <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="locations#Gameroom Downtown">Gameroom Downtown</a></li>
-            <li><a href="locations#Gameroom South">Gameroom South</a></li>
+            <% @stores.each do |s| %>
+              <li><a href="locations#<%= s.title %>"><%= s.title %></a></li>
+            <% end %>
           </ul>
         </li>
         <li class="dropdown">
