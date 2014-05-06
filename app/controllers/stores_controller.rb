@@ -1,4 +1,5 @@
 class StoresController < ApplicationController
+  before_action :admin_user
   def new
     @store = Store.new
   end
