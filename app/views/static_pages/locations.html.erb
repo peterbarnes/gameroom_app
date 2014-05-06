@@ -15,7 +15,8 @@
         <h4 id="<%= s.title %>" class="head"><i class="fa fa-building-o"></i> <%= s.title %>|<small><i class="fa fa-mobile"></i> <%= s.number %></small></h4>
       </div>
       <div class="panel-body">
-        <% if s.gmap != nil %>
+        <% if s.gmap.blank? %>
+        <% else %>
           <%= s.gmap %>
           <hr>
         <% end %>

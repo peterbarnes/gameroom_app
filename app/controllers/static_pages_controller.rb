@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @blurbs = Blurb.all
+    @stores = Store.all
   end
 
   def about
@@ -13,6 +14,7 @@ class StaticPagesController < ApplicationController
 
   def admin
     @blurbs = Blurb.all
+    @stores = Store.all
   end
 
   def locations

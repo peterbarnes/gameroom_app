@@ -23,4 +23,28 @@
       </div>
     </div>
   </div>
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>
+          Locations
+          <%= link_to new_store_path, class: "pull-right btn btn-primary" do %>
+            <i class="fa fa-plus"></i>
+            New Store
+          <% end %>
+        </h2>
+      </div>
+      <div class="panel-body">
+        <% @stores.each do |s| %>
+          <h4 class="well"><i class="fa fa-building-o"></i> <%= s.title %> <%= link_to edit_store_path(s) do %>
+                                                                               <i class="fa fa-pencil-square-o pull-right"></i>
+                                                                           <% end %>
+                                                                           <%= link_to s, method: :delete, data: { confirm: "You sure?" } do %>
+                                                                              <i class="fa fa-times-circle pull-right red"></i>
+                                                                           <% end %>
+          </h4>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
