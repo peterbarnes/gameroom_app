@@ -1,0 +1,23 @@
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>
+        <i class="fa fa-<%= blurb.icon %>"></i>
+        <%= blurb.title %>
+        <% if signed_in? && current_user.admin? %>
+          <%= link_to edit_blurb_path(blurb) do %>
+            <i class="fa fa-pencil-square-o pull-right"></i>
+          <% end %>
+          <%= link_to blurb, method: :delete, data: { confirm: "You sure?" } do %>
+            <i class="fa fa-times-circle pull-right red"></i>
+          <% end %>
+        <% end %>
+      </h4>
+    </div>
+    <div class="panel-body">
+      <p>
+        <%= blurb.desc %>
+      </p>
+    </div>
+  </div>
+</div>

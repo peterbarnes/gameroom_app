@@ -9,25 +9,6 @@
   </div>
 </div>
 <div class="row">
-  <% @stores.each do |s| %>
-    <div class="col-md-9 col-md-offset-3">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-        <h4 id="<%= s.title %>" class="head"><i class="fa fa-building-o"></i> <%= s.title %>|<small><i class="fa fa-mobile"></i> <%= s.number %></small></h4>
-      </div>
-      <div class="panel-body">
-        <% if s.gmap.blank? %>
-        <% else %>
-          
-          <hr>
-        <% end %>
-        <div class="details">
-          <p class="text-center"><%= s.address %></p>
-          <p class="text-center"><i class="fa fa-clock-o"></i> <%= s.hours %></p>
-        </div>
-      </div>
-      </div>
-    </div>
-  <% end %>
+  <%= render @stores %>
 </div>
 
