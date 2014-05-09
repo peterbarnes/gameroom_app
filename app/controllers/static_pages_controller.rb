@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
   before_action :admin_user, only: [:admin]
 
   def home
+    @blurbs = Blurb.all
   end
 
   def about
@@ -14,6 +15,7 @@ class StaticPagesController < ApplicationController
   end
 
   def locations
+    @stores = Store.all
   end
 
   def index
