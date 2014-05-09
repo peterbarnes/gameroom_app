@@ -8,7 +8,7 @@ class StoresController < ApplicationController
     @store = Store.new(store_params)
     if @store.save 
       flash[:success] = "Store created!"
-      redirect_to locations_path
+      redirect_to admin_path
     else
       render 'new'
     end
@@ -22,7 +22,7 @@ class StoresController < ApplicationController
     @store = Store.find(params[:id])
     if @store.update_attributes(store_params)
       flash[:success] = "Store updated"
-      redirect_to locations_path
+      redirect_to admin_path
     else
       render 'edit'
     end
@@ -31,7 +31,11 @@ class StoresController < ApplicationController
   def destroy
     Store.find(params[:id]).destroy
     flash[:success] = "Store deleted"
-    redirect_to locations_path
+    redirect_to admin_path
+  end
+
+  def show
+    @store = Store.find(params[:id])
   end
 
   private 

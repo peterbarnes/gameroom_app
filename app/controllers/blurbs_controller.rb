@@ -9,7 +9,7 @@ class BlurbsController < ApplicationController
     @blurb = Blurb.new(blurb_params)
     if @blurb.save
       flash[:success] = "Blurb created"
-      redirect_to root_url
+      redirect_to admin_path
     else
       render 'new'
     end
@@ -23,7 +23,7 @@ class BlurbsController < ApplicationController
     @blurb = Blurb.find(params[:id])
     if @blurb.update_attributes(blurb_params)
       flash[:success] = "Blurb updated"
-      redirect_to root_url
+      redirect_to admin_path
     else
       render 'edit'
     end
@@ -36,7 +36,11 @@ class BlurbsController < ApplicationController
   def destroy
     Blurb.find(params[:id]).destroy
     flash[:success] = "Blurb destroyed"
-    redirect_to root_url
+    redirect_to admin_path
+  end
+
+  def show
+    @blurb = Blurb.find(params[:id])
   end
 
   private

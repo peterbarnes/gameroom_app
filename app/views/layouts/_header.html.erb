@@ -35,10 +35,9 @@
              Services <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="/services#sell">Selling/Trading</a></li>
-            <li><a href="/services#repair">Repairs</a></li>
-            <li><a href="/services#disc">Disc cleaning</a></li>
-            <li><a href="/services#volun">Volunteering</a></li>
+            <% @services.each do |sv| %>
+              <li><a href="services#<%= sv.name %>"><%= sv.name %></a></li>
+            <% end %>
           </ul>
         </li>
         <li><%= link_to "Contact", contact_path %></li>
