@@ -1,4 +1,3 @@
-<% assets %>
 <div class="row">
   <div class="col-md-12">
     <div class="panel panel-default">
@@ -77,6 +76,34 @@
               <i class="fa fa-pencil-square-o pull-right"></i>
             <% end %>
             <%= link_to sv do %>
+              <i class="fa fa-eye pull-right"></i>
+            <% end %>
+          </h4>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>
+          Links <small>Appears on contact page</small>
+          <%= link_to new_link_path, class: "pull-right btn btn-primary" do %>
+            <i class="fa fa-plus"></i>
+            New link
+          <% end %>
+        </h2>
+      </div>
+      <div class="panel-body">
+        <% @links.each do |l| %>
+          <h4 class="well"><i class="fa fa-<%= l.icon %>"></i> <%= l.name %>
+            <%= link_to l, method: :delete, data: { confirm: "You sure?" } do %>
+              <i class="fa fa-times-circle pull-right red"></i>
+            <% end %>
+            <%= link_to edit_link_path(l) do %>
+              <i class="fa fa-pencil-square-o pull-right"></i>
+            <% end %>
+            <%= link_to l do %>
               <i class="fa fa-eye pull-right"></i>
             <% end %>
           </h4>

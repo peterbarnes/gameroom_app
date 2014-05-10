@@ -8,6 +8,10 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def contact
+    @links = Link.all
+  end
+
   def admin
   end
 

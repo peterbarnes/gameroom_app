@@ -1,5 +1,6 @@
 GameroomApp::Application.routes.draw do
   resources :users
+  resources :links
   resources :blurbs
   resources :stores
   resources :services

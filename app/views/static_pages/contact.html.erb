@@ -5,40 +5,14 @@
         <h3><i class="fa fa-users"></i> Follow us</h3>
       </div>
       <div class="panel-body">
-        <a href="https://facebook.com/gameroomforpresident" 
-           target="blank" 
-           class="btn btn-primary btn-block">
-           <i class="fa fa-facebook-square"></i> 
-           Facebook
-        </a>
-        <a href="#" 
-           target="blank" 
-           class="btn btn-primary btn-block"
-           disabled="disabled">
-           <i class="fa fa-twitter-square"></i> 
-           Twitter (Coming soon)
-        </a>
-        <a href="https://tumblr.com" 
-           target="blank" 
-           class="btn btn-primary btn-block"
-           disabled="disabled">
-           <i class="fa fa-tumblr-square"></i> 
-           Tumblr (Coming soon)
-        </a>
-        <a href="https://linkedin.com" 
-           target="blank" 
-           class="btn btn-primary btn-block"
-           disabled="disabled">
-           <i class="fa fa-linkedin-square"></i> 
-           LinkedIn (Coming soon)
-        </a>
-        <a href="https://plus.google.com" 
-           target="blank" 
-           class="btn btn-primary btn-block"
-           disabled="disabled">
-           <i class="fa fa-google-plus-square"></i> 
-           Google+ (Coming soon)
-        </a>
+        <% @links.each do |l| %>
+          <a href="<%= l.url %>" 
+             target="blank" 
+             class="btn btn-primary btn-block">
+             <i class="fa fa-<%= l.icon %>"></i>
+             <%= l.name %>
+           </a>
+        <% end %>
       </div>
     </div>
   </div>
