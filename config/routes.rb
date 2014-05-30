@@ -3,7 +3,6 @@ GameroomApp::Application.routes.draw do
   resources :links
   resources :blurbs
   resources :stores
-  resources :services
   resources :sessions, only: [:new, :create, :destroy]
   
   root 'static_pages#home'
@@ -13,6 +12,7 @@ GameroomApp::Application.routes.draw do
   match '/contact',   to: 'static_pages#contact',   via: 'get'
   match '/about',     to: 'static_pages#about',     via: 'get'
   match '/locations', to: 'static_pages#locations', via: 'get'
+  match '/services',  to: 'static_pages#services',  via: 'get'
   match '/admin',     to: 'static_pages#admin',     via: 'get'
   post 'send' =>          'static_pages#sendit'
 

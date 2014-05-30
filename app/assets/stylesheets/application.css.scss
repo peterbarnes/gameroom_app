@@ -45,7 +45,11 @@ $grdisabled: #DB9DE0;
 /* universal */
 
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans Condensed' !important;
+}
+
+.fa {
+  font-family: FontAwesome !important;
 }
 .navbar-brand {
   color: #EDEDED !important;
