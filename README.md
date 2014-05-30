@@ -1,2 +1,2 @@
 # Gameroom for President
-This is the official Gameroom website.
+This is the stable Gameroom website.
