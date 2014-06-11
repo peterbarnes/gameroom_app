@@ -1,52 +1,29 @@
 <div class="row">
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3><i class="fa fa-users"></i> Follow us</h3>
-      </div>
-      <div class="panel-body">
-          <a href="https://www.facebook.com/gameroomforpresident" 
-            target="blank" 
-            class="btn btn-primary btn-block">
-            <i class="fa fa-facebook-square"></i>
-             Facebook
-          </a>
-      </div>
-    </div>
+  <div class="col-md-6 text-center">
+    <h1 class="lead text-center focus">Follow us</h1>
+    <a href="https://www.facebook.com/gameroomforpresident" target="blank" class="">
+      <i class="fa fa-facebook-square fa-5x"></i>
+    </a>
   </div>
-  <div class="col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3><i class="fa fa-comments"></i> Questions, comments, or concerns?</h3>
-      </div>
-      <div class="panel-body">
-        <div class="emailform">
-          <%= form_tag("/send", method: "post") do %>
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <%= label_tag(:name, "Name") %>
-                <%= text_field_tag(:name, params[:name], class: "form-control") %>
-                <hr noshade>
-                <%= label_tag(:email, "Email") %>
-                <%= text_field_tag(:email, params[:email], class: "form-control") %>
-              </div>
-              <div class="col-md-6 form-group">
-                <%= label_tag(:body, "Message") %>
-                <%= text_area_tag(:body, params[:body], class: "form-control", rows: "6") %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-1">
-                <button type="submit" 
-                        class="btn btn-primary">
-                     <i class="fa fa-envelope-o"></i> 
-                    Send
-                </button>
-              </div>
-            </div>
-          <% end %>
+  <div class="col-md-6">
+    <h1 class="lead text-center focus">Contact us</h1>
+    <div class="emailform">
+      <%= form_tag("/send", method: "post") do %>
+        <div class="form-group">
+          <%= text_field_tag(:name, params[:name], class: 'form-control input-lg lead', placeholder: "Name") %>
         </div>
-      </div>
+        <div class="form-group">
+          <%= text_field_tag(:email, params[:email], class: "form-control input-lg lead", placeholder: "Email") %>
+        </div>
+        <div class="form-group">
+          <%= text_area_tag(:body, params[:body], class: "form-control input-lg lead", placeholder: "Message", rows: '5') %>
+        </div>
+        <button type="submit" 
+                class="btn btn-primary">
+             <i class="fa fa-envelope-o"></i> 
+            Send
+        </button>
+      <% end %>
     </div>
   </div>
 </div>

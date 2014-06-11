@@ -45,7 +45,7 @@ $grdisabled: #DB9DE0;
 /* universal */
 
 * {
-  font-family: 'Open Sans Condensed' !important;
+  font-family: 'Open Sans' !important;
 }
 
 .fa {
@@ -124,4 +124,14 @@ footer {
   text-align: center;
 }
 
+.no-bottom {
+  margin-bottom: 0px !important;
+}
 
+.main {
+  margin-top: 25px;
+}
+
+.focus {
+  font-size: 50px;
+}
